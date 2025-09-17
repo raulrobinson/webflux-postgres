@@ -22,6 +22,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.7.0'
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     runtimeOnly 'org.postgresql:r2dbc-postgresql'
     runtimeOnly 'org.postgresql:postgresql' // solo para herramientas, no se usa en runtime WebFlux
     compileOnly 'org.projectlombok:lombok:1.18.32'
