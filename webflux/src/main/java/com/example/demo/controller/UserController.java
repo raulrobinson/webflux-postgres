@@ -43,4 +43,23 @@ public class UserController {
     public Mono<Void> delete(@PathVariable Long id) {
         return service.deleteById(id);
     }
+
+    // 🔹 Nuevo: paginación
+    @GetMapping("/paged")
+    public Flux<User> paged(@RequestParam(defaultValue = "0") int page,
+                            @RequestParam(defaultValue = "5") int size) {
+        return service.findAllPaged(page, size);
+    }
+
+    // 🔹 Nuevo: filtro por email
+    @GetMapping("/search/email")
+    public Flux<User> searchByEmail(@RequestParam String email) {
+        return service.findByEmail(email);
+    }
+
+    // 🔹 Nuevo: filtro por nombre (like)
+    @GetMapping("/search/name")
+    public Flux<User> searchByName(@RequestParam String name) {
+        return service.findByNameLike(name);
+    }
 }

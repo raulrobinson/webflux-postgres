@@ -17,4 +17,14 @@ curl -X PUT http://localhost:8080/users/1 -H "Content-Type: application/json" -d
 # Eliminar
 curl -X DELETE http://localhost:8080/users/1
 
+# Paginación
+curl "http://localhost:8080/users/paged?page=0&size=2"
+
+# Buscar por email
+curl "http://localhost:8080/users/search/email?email=raul@test.com"
+
+# Buscar por nombre (like)
+curl "http://localhost:8080/users/search/name?name=raul"
+
+
 ```
